@@ -33,7 +33,7 @@ message["Subject"] = "Tithe Report for {}".format(today)
 message.attach(MIMEText("Please see attached document below for tithe report...", "plain"))
 
 server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-password = getpass.getpass("Please Enter Your Password: ").strip()
+password = getpass.getpass("Please Enter Your Gmail Password for {}: ".format(sender_email)).strip()
 
 try:
     with open(tithe_report, "rb") as report:
@@ -58,4 +58,4 @@ except Exception as e:
 finally:
     server.quit()
 
-raw_input("Press any key to exit...")
+input("Press any key to exit...")

@@ -1,2 +1,4 @@
 build/
 send_report.spec
+tithe_report_*.*
+__pycache__
